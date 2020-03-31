@@ -122,7 +122,7 @@ export default {
     },
     resultLimit: {
       type: Number,
-      default: 3
+      default: 6
     }
   },
   methods: {
