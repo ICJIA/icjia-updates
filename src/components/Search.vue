@@ -191,10 +191,12 @@ export default {
       if (item.item.file) {
         console.log("download file");
         location.href = `${this.$myApp.computedPublicPath}/downloads/${item.item.file}`;
+        EventBus.$emit("closeSearch");
       } else {
         this.$router.push(item.item.path).catch(() => {
           this.$vuetify.goTo(0);
         });
+        EventBus.$emit("closeSearch");
       }
     }
     // goToRoute(context) {
