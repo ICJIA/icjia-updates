@@ -79,11 +79,17 @@ export default {
 <style>
 ul.summary {
   list-style-type: none;
-  margin-left: -10px;
-  margin-top: 5px !important;
+  margin-left: -30px !important;
+  margin-top: 3px !important;
+}
+
+ul.summary li {
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
 li.news-list {
   margin-bottom: 8px;
+  margin-left: -15px;
 }
 </style>
