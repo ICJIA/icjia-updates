@@ -1,22 +1,19 @@
 <template>
   <div>
-    <div id="learn-more" style="background: #fff">
-      <v-container class="markdown-body">
-        <v-row>
-          <v-col>
-            <HomePageContent
-              class="dynamic-content py-8"
-              @click.native="handleClicks"
-            />
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col>
-            <NewsList />
-          </v-col>
-        </v-row>
-      </v-container>
-    </div>
+    <v-container>
+      <v-row>
+        <v-col cols="12" sm="12" md="9" class="markdown-body">
+          <HomePageContent
+            class="dynamic-content py-8"
+            @click.native="handleClicks"
+          />
+          <NewsList @hook:mounted="generateToc" />
+        </v-col>
+        <v-col cols="12" md="3" class="hidden-sm-and-down">
+          <Toc :toc="toc" style="margin-top: 75px;"></Toc
+        ></v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -84,7 +81,7 @@ export default {
       if (this.$vuetify.breakpoint.xs || this.$vuetify.breakpoint.sm) {
         return "12";
       } else {
-        return this.showToc ? "9" : "12";
+        return "9";
       }
     },
     scrollTo() {

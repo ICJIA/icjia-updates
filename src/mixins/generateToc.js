@@ -9,14 +9,14 @@ export const generateToc = {
     generateToc() {
       if (!this.showToc) return;
 
-      let doc = Array.from(document.querySelectorAll("h2,h3"));
+      let doc = Array.from(document.querySelectorAll("h2"));
 
       let parent;
 
       let tableOfContents = doc.map((d, index) => {
         let obj = {};
         obj.content = d.innerText;
-        let id = d.id.replace("test-app-", "toc-");
+        let id = d.id.replace("icjia-", "toc-");
         obj.id = id;
 
         obj.target = `${d.id}`;
@@ -32,7 +32,7 @@ export const generateToc = {
 
         return obj;
       });
-
+      console.log(tableOfContents);
       this.toc = tableOfContents;
       return this.toc;
     }

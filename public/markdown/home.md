@@ -1,7 +1,7 @@
 ---
 title: "Home"
 showInSitemap: true
-showToc: false
+showToc: true
 showInFooter: true
 showInNav: false
 showInSidebar: true

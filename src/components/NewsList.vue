@@ -3,34 +3,45 @@
     <v-container fluid style="margin-top: -55px;" class="mb-12">
       <div v-for="category in $myApp.categories" :key="category">
         <h2 :id="slugify(category)">{{ category }}</h2>
-
-        <div
-          v-for="item in $myApp.news"
-          :key="item.attributes.title"
-          class="px-5"
-        >
-          <li
-            v-if="
-              item.attributes.category === category && !item.attributes.file
-            "
+        <ul>
+          <div
+            v-for="item in $myApp.news"
+            :key="item.attributes.title"
+            class="px-5"
           >
-            <router-link :to="item.path"
-              >{{ item.attributes.posted | dateFormat }} -
-              {{ item.attributes.title }}</router-link
-            >
-          </li>
-          <li
-            v-if="item.attributes.category === category && item.attributes.file"
-          >
-            <a
-              :href="
-                `${$myApp.computedPublicPath}/downloads/${item.attributes.file}`
+            <li
+              v-if="
+                item.attributes.category === category && !item.attributes.file
               "
-              >{{ item.attributes.posted | dateFormat }} -
-              {{ item.attributes.title }}</a
+              class="news-list"
             >
-          </li>
-        </div>
+              <router-link :to="item.path"
+                >{{ item.attributes.posted | dateFormat }} -
+                {{ item.attributes.title }}</router-link
+              >
+              <ul class="summary" v-if="item.attributes.displaySummaryOnHome">
+                <li>{{ item.attributes.summary }}</li>
+              </ul>
+            </li>
+            <li
+              v-if="
+                item.attributes.category === category && item.attributes.file
+              "
+              class="news-list"
+            >
+              <a
+                :href="
+                  `${$myApp.computedPublicPath}/downloads/${item.attributes.file}`
+                "
+                >{{ item.attributes.posted | dateFormat }} -
+                {{ item.attributes.title }}</a
+              >
+              <ul class="summary" v-if="item.attributes.displaySummaryOnHome">
+                <li>{{ item.attributes.summary }}</li>
+              </ul>
+            </li>
+          </div>
+        </ul>
       </div>
     </v-container>
   </div>
@@ -49,7 +60,7 @@ export default {
   },
   methods: {
     slugify(str) {
-      return slugs(str);
+      return slugs("icjia-" + str);
     }
   },
   mounted() {
@@ -65,4 +76,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style>
+ul.summary {
+  list-style-type: none;
+  margin-left: -10px;
+  margin-top: 5px !important;
+}
+
+li.news-list {
+  margin-bottom: 8px;
+}
+</style>

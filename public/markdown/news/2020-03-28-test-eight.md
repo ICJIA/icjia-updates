@@ -1,9 +1,9 @@
 ---
-title: "Celeberrimus pauca agnorunt te mihi"
-posted: "2020-03-28"
-category: "Heading 4"
+title: "Celebmus pauca agnorunt te mihi"
+posted: "2020-03-12"
+category: "Heading 5"
 summary: 'Lorem markdownum tamen antiqua, comitante propulsa nimius est, exstantibus
-sidus, cladis animis facit. Aut se velamina letale et vobis. Lorem markdownum tamen antiqua, comitante propulsa nimius est, exstantibus.'
+sidus, cladis animis facit. Aut se velamina letale et vobis.'
 displaySummaryOnHome: false
 ---
 
