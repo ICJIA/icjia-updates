@@ -8,10 +8,11 @@
       height="90"
       elevate-on-scroll
     >
-      <!-- <v-app-bar-nav-icon
+      <v-app-bar-nav-icon
         @click="toggleDrawer"
         aria-label="Click to toggle menu"
-      /> -->
+        class="hidden-sm-and-up"
+      />
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -169,7 +170,7 @@ export default {
   font-size: 24px;
 }
 .nav-title.small {
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .v-card.searchCard {

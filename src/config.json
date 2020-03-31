@@ -5,6 +5,7 @@
   "siteTitle": "COVID-19 News & Updates",
   "githubURL": "https://github.com/ICJIA/icjia-updates",
   "coronaInfoURL": "https://coronavirus.icjia-api.cloud/",
+  "siteTitleMobile": "COVID-19 News & Updates",
   "siteDescription": "COVID-19 News & Updates",
   "searchConfig": {
     "shouldSort": true,
