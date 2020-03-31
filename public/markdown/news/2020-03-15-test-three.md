@@ -1,5 +1,5 @@
 ---
-title: "Aut se velamina letale et vobis"
+title: "This is another link to direct content"
 posted: "2020-03-15"
 category: "Heading 1"
 summary: 'Lorem markdownum tamen antiqua, comitante propulsa nimius est, exstantibus
