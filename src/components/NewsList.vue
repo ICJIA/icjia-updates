@@ -34,7 +34,10 @@
                   `${$myApp.computedPublicPath}/downloads/${item.attributes.file}`
                 "
                 >{{ item.attributes.posted | dateFormat }} -
-                {{ item.attributes.title }}</a
+                {{ item.attributes.title }}
+                <v-icon class="ml-2" color="blue darken-2"
+                  >cloud_download</v-icon
+                ></a
               >
               <ul class="summary" v-if="item.attributes.displaySummaryOnHome">
                 <li>{{ item.attributes.summary }}</li>
