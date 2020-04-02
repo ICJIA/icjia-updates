@@ -73,15 +73,14 @@
         }}</span>
         <span v-else style="font-size: 12px">{{ link.attributes.title }}</span>
       </v-btn>
-
+      <v-btn class="hidden-sm-and-down" text href="https://icjia.illinois.gov">
+        ICJIA <v-icon right>open_in_new</v-icon>
+      </v-btn>
       <v-col class="hidden-sm-and-down">
         <div style="width: 250px" class>
           <Search></Search>
         </div>
       </v-col>
-      <!-- <v-btn text @click="toggleSearch()" class="hidden-md-and-up">
-        <v-icon>search</v-icon>
-      </v-btn>-->
     </v-app-bar>
   </div>
 </template>

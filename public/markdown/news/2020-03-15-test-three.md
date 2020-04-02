@@ -1,5 +1,5 @@
 ---
-title: "This is another link to direct content"
+title: "This is another link to markdown content"
 posted: "2020-03-15"
 category: "Heading 1"
 summary: 'Lorem markdownum tamen antiqua, comitante propulsa nimius est, exstantibus
