@@ -15,6 +15,7 @@ paths.forEach(path => {
   routeObj.meta = {};
   routeObj.meta.toc = toc(fileObj.content).json;
   routeObj.meta.title = fileObj.data.title || "Untitled";
+  routeObj.meta.linkTitle = fileObj.data.linkTitle;
   routeObj.meta.hideScrollToTop = fileObj.data.hideScrollToTop || false;
   routeObj.meta.tocHeading = fileObj.data.tocHeading || fileObj.data.title;
   routeObj.meta.file = fileObj.data.file;

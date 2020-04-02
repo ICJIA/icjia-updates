@@ -1,5 +1,6 @@
 ---
-title: "This is another link to markdown content"
+title: "Lorem markdownum tamen antiqua"
+linkTitle: "This is a another link to website content in markdown"
 posted: "2020-03-15"
 category: "Heading 1"
 summary: 'Lorem markdownum tamen antiqua, comitante propulsa nimius est, exstantibus

@@ -34,7 +34,7 @@
       <Corona ref="alert" />
       <transition name="fade" mode="out-in">
         <router-view
-          @click="closeElements()"
+          @click.native="closeSearch()"
           :key="$route.fullPath"
         ></router-view>
       </transition>
@@ -92,7 +92,7 @@ export default {
     fab: false
   }),
   methods: {
-    closeElements() {
+    closeSearch() {
       EventBus.$emit("closeSearch");
     },
     onScroll(e) {

@@ -52,7 +52,10 @@
             >
               <router-link :to="item.path"
                 >{{ item.attributes.posted | dateFormat }} -
-                {{ item.attributes.title }}</router-link
+                <span v-if="item.attributes.linkTitle">{{
+                  item.attributes.linkTitle
+                }}</span>
+                <span v-else>{{ item.attributes.title }}</span></router-link
               >
               <ul class="summary" v-if="item.attributes.displaySummaryOnHome">
                 <li>{{ item.attributes.summary }}</li>
@@ -86,13 +89,6 @@ export default {
   },
 
   mounted() {
-    // let newsItems = this.$myApp.siteMeta.filter(item => {
-    //   if (item.root === "/news") {
-    //     return item;
-    //   }
-    // });
-    // this.newsItems = newsItems;
-
     this.loading = false;
   }
 };
