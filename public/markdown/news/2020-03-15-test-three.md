@@ -6,6 +6,7 @@ category: "Heading 1"
 summary: 'Lorem markdownum tamen antiqua, comitante propulsa nimius est, exstantibus
 sidus, cladis animis facit. Posterior sparsi **nisi**, arbore adhuc, nympha
 silicem in segetes rapidas.'
+showInSitemap: true
 ---
 
 Lorem markdownum tamen antiqua, comitante propulsa nimius est, exstantibus

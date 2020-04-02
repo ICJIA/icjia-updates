@@ -5,6 +5,7 @@ category: "Heading 5"
 summary: 'Lorem markdownum tamen antiqua, comitante propulsa nimius est, exstantibus
 sidus, cladis animis facit. Aut se velamina letale et vobis.'
 displaySummaryOnHome: false
+showInSitemap: true
 ---
 
 Lorem markdownum tamen antiqua, comitante propulsa nimius est, exstantibus

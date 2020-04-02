@@ -11,7 +11,9 @@ const routes = [...manualRoutes, ...markdownRoutes, ...fallbackRoutes];
 let urls = routes.map(route => {
   if (route.meta && route.meta.showInSitemap) {
     let obj = {
-      url: `${config.clientBase}${config.publicPath}${route.path}`,
+      url: route.meta.file
+        ? `${config.clientBase}${config.publicPath}/${route.meta.file}`
+        : `${config.clientBase}${config.publicPath}${route.path}`,
       changefreq: "weekly",
       priority: 0.5,
       lastmod: route.meta.updatedAt || new Date().toJSON().substring(0, 10)
