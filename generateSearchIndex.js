@@ -11,6 +11,7 @@ let searchIndex = routes.map(route => {
       path: route.path,
       category: route.meta.category,
       file: route.meta.file,
+      url: route.meta.url,
       name: route.name,
       title: route.meta.title,
       summary: route.meta.summary,

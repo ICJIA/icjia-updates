@@ -17,9 +17,8 @@ paths.forEach(path => {
   routeObj.meta.title = fileObj.data.title || "Untitled";
   routeObj.meta.hideScrollToTop = fileObj.data.hideScrollToTop || false;
   routeObj.meta.tocHeading = fileObj.data.tocHeading || fileObj.data.title;
-  routeObj.meta.fileDownloadPath =
-    fileObj.data.fileDownloadPath || `/downloads/`;
   routeObj.meta.file = fileObj.data.file;
+  routeObj.meta.url = fileObj.data.url;
   routeObj.meta.category = fileObj.data.category;
   routeObj.meta.showInSitemap = fileObj.data.showInSitemap;
   routeObj.meta.hideFromSearch = fileObj.data.hideFromSearch || false;

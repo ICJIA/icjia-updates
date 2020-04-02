@@ -11,20 +11,6 @@
           >
             <li
               v-if="
-                item.attributes.category === category && !item.attributes.file
-              "
-              class="news-list"
-            >
-              <router-link :to="item.path"
-                >{{ item.attributes.posted | dateFormat }} -
-                {{ item.attributes.title }}</router-link
-              >
-              <ul class="summary" v-if="item.attributes.displaySummaryOnHome">
-                <li>{{ item.attributes.summary }}</li>
-              </ul>
-            </li>
-            <li
-              v-if="
                 item.attributes.category === category && item.attributes.file
               "
               class="news-list"
@@ -35,9 +21,38 @@
                 "
                 >{{ item.attributes.posted | dateFormat }} -
                 {{ item.attributes.title }}
-                <v-icon class="ml-2" color="blue darken-2"
+                <v-icon class="ml-2" small color="blue darken-2"
                   >cloud_download</v-icon
                 ></a
+              >
+              <ul class="summary" v-if="item.attributes.displaySummaryOnHome">
+                <li>{{ item.attributes.summary }}</li>
+              </ul>
+            </li>
+            <li
+              v-else-if="
+                item.attributes.category === category && item.attributes.url
+              "
+              class="news-list"
+            >
+              <a :href="`${item.attributes.url}`"
+                >{{ item.attributes.posted | dateFormat }} -
+                {{ item.attributes.url }}
+                <v-icon class="ml-2" small color="blue darken-2"
+                  >open_in_new</v-icon
+                ></a
+              >
+              <ul class="summary" v-if="item.attributes.displaySummaryOnHome">
+                <li>{{ item.attributes.summary }}</li>
+              </ul>
+            </li>
+            <li
+              v-else-if="item.attributes.category === category"
+              class="news-list"
+            >
+              <router-link :to="item.path"
+                >{{ item.attributes.posted | dateFormat }} -
+                {{ item.attributes.title }}</router-link
               >
               <ul class="summary" v-if="item.attributes.displaySummaryOnHome">
                 <li>{{ item.attributes.summary }}</li>
