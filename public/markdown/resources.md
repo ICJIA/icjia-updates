@@ -9,6 +9,7 @@ menuRank: 0
 menuTitle: "Resources"
 summary: "Addition Resources"
 showAsCard: false
+status: "live"
 ---
 
 ## Quod tela oscula gratus umbra at cornua

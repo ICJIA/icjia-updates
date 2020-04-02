@@ -6,6 +6,7 @@ summary: 'Lorem markdownum tamen antiqua, comitante propulsa nimius est, exstant
 sidus, cladis animis facit. Aut se velamina letale et vobis.'
 displaySummaryOnHome: false
 showInSitemap: true
+status: 'live'
 ---
 
 Lorem markdownum tamen antiqua, comitante propulsa nimius est, exstantibus

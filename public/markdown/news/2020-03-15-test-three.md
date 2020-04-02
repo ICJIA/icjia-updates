@@ -7,6 +7,7 @@ summary: 'Lorem markdownum tamen antiqua, comitante propulsa nimius est, exstant
 sidus, cladis animis facit. Posterior sparsi **nisi**, arbore adhuc, nympha
 silicem in segetes rapidas.'
 showInSitemap: true
+status: 'live'
 ---
 
 Lorem markdownum tamen antiqua, comitante propulsa nimius est, exstantibus

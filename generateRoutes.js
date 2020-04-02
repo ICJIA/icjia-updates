@@ -19,6 +19,7 @@ paths.forEach(path => {
   routeObj.meta.hideScrollToTop = fileObj.data.hideScrollToTop || false;
   routeObj.meta.tocHeading = fileObj.data.tocHeading || fileObj.data.title;
   routeObj.meta.file = fileObj.data.file;
+  routeObj.meta.status = fileObj.data.status;
   routeObj.meta.url = fileObj.data.url;
   routeObj.meta.category = fileObj.data.category;
   routeObj.meta.showInSitemap = fileObj.data.showInSitemap;
@@ -31,7 +32,10 @@ paths.forEach(path => {
     routeObj.url = "/";
   }
 
-  if (!routeObj.path.includes("placeholder")) {
+  if (
+    !routeObj.path.includes("placeholder") &&
+    routeObj.meta.status === "live"
+  ) {
     generatedRoutes.push(routeObj);
   }
 });

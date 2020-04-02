@@ -9,6 +9,7 @@ menuRank: 50
 menuTitle: "Contact"
 summary: "Contact ICJIA"
 showAsCard: false
+status: "live"
 ---
 
 ## Quod tela oscula gratus umbra at cornua

@@ -25,14 +25,14 @@ const siteMeta = context.keys().map(key => ({
 
 let categories = [];
 siteMeta.forEach(item => {
-  if (item.root === "/news") {
+  if (item.root === "/news" && item.attributes.status === "live") {
     categories.push(item.attributes.category);
   }
 });
 let filteredCategories = Array.from(new Set(categories)).sort();
 
 let news = siteMeta.filter(item => {
-  if (item.root === "/news") {
+  if (item.root === "/news" && item.attributes.status === "live") {
     return item;
   }
 });

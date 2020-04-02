@@ -11,7 +11,9 @@
           >
             <li
               v-if="
-                item.attributes.category === category && item.attributes.file
+                item.attributes.category === category &&
+                  item.attributes.status === 'live' &&
+                  item.attributes.file
               "
               class="news-list"
             >
@@ -31,7 +33,9 @@
             </li>
             <li
               v-else-if="
-                item.attributes.category === category && item.attributes.url
+                item.attributes.category === category &&
+                  item.attributes.url &&
+                  item.attributes.status === 'live'
               "
               class="news-list"
             >
@@ -47,7 +51,10 @@
               </ul>
             </li>
             <li
-              v-else-if="item.attributes.category === category"
+              v-else-if="
+                item.attributes.category === category &&
+                  item.attributes.status === 'live'
+              "
               class="news-list"
             >
               <router-link :to="item.path"

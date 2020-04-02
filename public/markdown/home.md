@@ -9,6 +9,7 @@ menuRank: 0
 menuTitle: "Home"
 summary: "ICJIA Covid-19 News and Updates"
 showAsCard: false
+status: "live"
 ---
 
 # Quod tela oscula gratus umbra at cornua

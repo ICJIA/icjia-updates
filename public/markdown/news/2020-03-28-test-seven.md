@@ -6,4 +6,5 @@ file: "EligibleAreasCensusTracts.pdf"
 summary: 'Lorem markdownum tamen antiqua, comitante propulsa nimius est, exstantibus
 sidus, cladis animis facit.'
 showInSitemap: true
+status: 'live'
 ---
