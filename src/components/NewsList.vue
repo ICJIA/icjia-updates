@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click="closeSearch">
     <v-container fluid style="margin-top: -55px;" class="mb-12">
       <div v-for="category in $myApp.categories" :key="category">
         <h2 :id="slugify(category)">{{ category }}</h2>
@@ -66,7 +66,7 @@
 </template>
 
 <script>
-// import _ from "lodash";
+import { EventBus } from "@/event-bus";
 import slugs from "slugs";
 export default {
   data() {
@@ -79,8 +79,12 @@ export default {
   methods: {
     slugify(str) {
       return slugs("icjia-" + str);
+    },
+    closeSearch() {
+      EventBus.$emit("closeSearch");
     }
   },
+
   mounted() {
     // let newsItems = this.$myApp.siteMeta.filter(item => {
     //   if (item.root === "/news") {

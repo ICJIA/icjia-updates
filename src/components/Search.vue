@@ -34,12 +34,18 @@
       }"
     >
       <!--- pages --->
-      <!-- <div
-        style="background: #0D4474; font-size: 18px; font-weight: bold; color: #fff"
-        class="px-2 py-2"
+      <div
+        style="background: #ccc; font-size: 12px; font-weight: bold; color: #fff"
+        class="px-2 py-2 text-right"
       >
-        Pages
-      </div> -->
+        <v-btn
+          small
+          text
+          style="font-size: 12px; font-weight: 900"
+          @click="closeSearch"
+          >Close<v-icon dark right small>close</v-icon></v-btn
+        >
+      </div>
       <div v-if="!resultPages.length" class="pl-3 py-3 resultSummary">
         No matching pages found.
       </div>
@@ -55,6 +61,12 @@
             @click="gotoItem(item)"
           >
             {{ item.item.title }}
+            <span v-if="item.item.file"
+              ><v-icon small right>cloud_download</v-icon></span
+            >
+            <span v-if="item.item.url"
+              ><v-icon small right>open_in_new</v-icon></span
+            >
           </div>
           <div
             v-if="item.item.category"
@@ -186,11 +198,18 @@ export default {
         return 500;
       }
     },
+    closeSearch() {
+      EventBus.$emit("closeSearch");
+    },
     gotoItem(item) {
       console.log(item);
       if (item.item.file) {
         console.log("download file");
         location.href = `${this.$myApp.computedPublicPath}/downloads/${item.item.file}`;
+        EventBus.$emit("closeSearch");
+      } else if (item.item.url) {
+        console.log("goto url");
+        location.href = `${item.item.url}`;
         EventBus.$emit("closeSearch");
       } else {
         this.$router.push(item.item.path).catch(() => {
@@ -199,27 +218,6 @@ export default {
         EventBus.$emit("closeSearch");
       }
     }
-    // goToRoute(context) {
-    //   let target = context.target ? `#${context.target}` : "";
-    //   let url = `${context.path}${target}`;
-    //   EventBus.$emit("closeSearch");
-    //   this.$router.push(url).catch(() => {
-    //     this.$vuetify.goTo(0);
-    //   });
-    // },
-    // followPath(result) {
-    //   if (result.item.type === "file") {
-    //     EventBus.$emit("closeSearch");
-    //     let publicPath =
-    //       process.env.NODE_ENV === `production`
-    //         ? this.$myApp.config.publicPath
-    //         : "";
-    //     //console.log(`${publicPath}${result.item.path}`);
-    //     location.href = `${publicPath}${result.item.path}`;
-    //   } else {
-    //     return;
-    //   }
-    // }
   }
 };
 </script>
